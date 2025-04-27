@@ -1,0 +1,14 @@
+const express = require('express');
+const { register, login, listUsers, updateUser } = require('../controllers/userController');
+const { protect, adminOnly } = require('../middlewares/auth');
+
+const router = express.Router();
+
+router.post('/register', register);
+router.post('/login', login);
+
+// protected
+router.get('/users', protect, adminOnly, listUsers);
+router.put('/users/:id', protect, adminOnly, updateUser);
+
+module.exports = router;

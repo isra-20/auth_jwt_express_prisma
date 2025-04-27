@@ -1,0 +1,3 @@
+-- signup(name ,pass, role)/login --> jwt (username, role)
+-- find by users 
+-- user crud express with routes protected jwt only admin can  (token ,role )
